@@ -34,6 +34,8 @@ function showMainTitle(){
   $("#mainIntroTitle").removeClass('hidden');
   $("#mainIntroTitle").addClass('animated fadeInUp visible');
   setTimeout(function(){
+    $("#premade").removeClass('hidden');
+    $("#premade").addClass('animated fadeInUp visible');
     $("#entryButton").removeClass('hidden');
     $("#entryButton").show().addClass('animated fadeInUp visible');
   }, 1500);
@@ -41,7 +43,9 @@ function showMainTitle(){
 
 function showMainSite(){
   $("#mainIntro").addClass('animated fadeOutDown');
+  $("#premade").addClass('animated fadeOutDown');
   setTimeout(function(){
+    $("#premade").addClass('hidden');
     $("#finalScreen").removeClass('visible');
     $("#finalScreen").addClass('hidden');
     $("#topOfPage").removeClass('hidden');
