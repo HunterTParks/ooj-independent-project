@@ -1,10 +1,10 @@
 $(document).ready(function(){
   $("form#mainForm").submit(function(event){
     event.preventDefault();
-    debugger;
+    // debugger;
 
     var newPizza = new Pizza();
-    newPizza = addToppings(newPizza);
+    newPizza.addToppings(newPizza);
 
   });
 });
@@ -15,7 +15,7 @@ function Pizza(){
   this.price = "";
 }
 
-var addToppings = function(newPizza){
+Pizza.prototype.addToppings = function(newPizza){
   $("input:checkbox[name = toppings]:checked").each(function(){
     newPizza.toppings.push($(this).val());
   });
