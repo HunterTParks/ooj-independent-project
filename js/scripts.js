@@ -1,5 +1,6 @@
 $(document).ready(function(){
   var newAmountOfPizzas = new amountOfPizza();
+  var str = 0;
 
   showMainTitle();
 
@@ -13,7 +14,7 @@ $(document).ready(function(){
 
   $("form#mainForm").submit(function(event){
     event.preventDefault();
-
+    debugger;
     var newPizza = new Pizza();
     newPizza.addSize(newPizza);
     newPizza.addToppings(newPizza);
@@ -23,7 +24,8 @@ $(document).ready(function(){
 
     resetFields();
     hideMainSite();
-    $("#reviewOrder").append("<br>" + "Your total is going to be " + newAmountOfPizzas.showOrder(newAmountOfPizzas));
+
+    $("#PizzaTotal").append(newAmountOfPizzas.totalPrice);
   });
 
 });
@@ -81,7 +83,7 @@ function resetFields(){
   $("input#olives").prop('checked', false);
   $("input#mushrooms").prop('checked', false);
   $("input#jalapenos").prop('checked', false);
-  $("span#reviewOrder").html("");
+  $("#PizzaTotal").empty();
 }
 
 amountOfPizza.prototype.showOrder = function(newAmountOfPizzas){
