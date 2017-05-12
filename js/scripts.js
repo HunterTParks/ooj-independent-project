@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  var newAmountOfPizzas = new amountOfPizza();
+  
   $("form#mainForm").submit(function(event){
     event.preventDefault();
 
@@ -9,6 +11,10 @@ $(document).ready(function(){
   });
 });
 
+function amountOfPizza(){
+  this.amount = [];
+  this.totalPrice = 0;
+}
 function Pizza(){
   this.toppings = [];
   this.size = 0;
