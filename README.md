@@ -14,7 +14,7 @@ This project is designated to display a Pizza company. The user will be prompted
 | Constructor creates an object | No object saved | Object created using Pizza Constructor |
 | User input affects created object | Object created using Pizza Constructor | Created object has effected children values |
 | Prototype method determines price | Created object has effected children values | Children values put into prototype and returns a price point for the created Pizza object |
-| Pizza object is put into a constructor for a total amount of pizzas | Pizza object and price is finished | Pizza object is put into array that proceeds in another object to keep track of total amount of pizzas | 
+| Pizza object is put into a constructor for a total amount of pizzas | Pizza object and price is finished | Pizza object is put into array that proceeds in another object to keep track of total amount of pizzas |
 
 ### Tutorial
 
@@ -28,6 +28,13 @@ Here is how you can download my web application from github:
 Another way you can view my application is by going to the following link:
 
 https://rawgit.com/HunterTParks/ooj-independent-project/master/index.html
+
+### Tools used to create application
+* HTML
+* CSS
+* jQuery
+* Bootstrap
+* Animate.css : Link Here --> https://daneden.github.io/animate.css/
 
 ### Known bugs
 
