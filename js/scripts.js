@@ -21,6 +21,10 @@ $(document).ready(function(){
 function showMainTitle(){
   $("#mainIntroTitle").removeClass('hidden');
   $("#mainIntroTitle").addClass('animated fadeInUp visible');
+  setTimeout(function(){
+    $("#entryButton").removeClass('hidden');
+    $("#entryButton").show().addClass('animated fadeInUp visible');
+  }, 1500);
 }
 
 function amountOfPizza(){
