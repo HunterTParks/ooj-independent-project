@@ -26,7 +26,7 @@ Here is how you can download my web application from github:
 
 Another way you can view my application is by going to the following link:
 
-
+https://rawgit.com/HunterTParks/ooj-independent-project/master/index.html
 
 ### Known bugs
 
