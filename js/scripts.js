@@ -9,7 +9,7 @@ $(document).ready(function(){
   });
 
   $("#final").click(function(){
-    showMainSite();
+    showTitleAgain();
   });
 
   $("form#mainForm").submit(function(event){
@@ -41,8 +41,23 @@ function showMainTitle(){
   }, 1500);
 }
 
+function showTitleAgain(){
+  $("#finalScreen").removeClass('visible')
+  $("#finalScreen").addClass('animated fadeOutDown');
+  $("#finalScreenCol1").removeClass('visible');
+  $("#finalScreenCol1").addClass('animated fadeOutDown');
+  setTimeout(function(){
+    $("#premade").removeClass('animated fadeOutDown');
+    $("#mainIntro").removeClass('animated fadeOutDown');
+    $("#entryButton").removeClass('animated fadeOutDown');
+    $("#entryButton").addClass('hidden');
+    showMainTitle();
+  })
+}
+
 function showMainSite(){
   $("#mainIntro").addClass('animated fadeOutDown');
+  $("#premade").removeClass('animated fadeInUp');
   $("#premade").addClass('animated fadeOutDown');
   setTimeout(function(){
     $("#premade").addClass('hidden');
