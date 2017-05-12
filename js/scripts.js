@@ -1,6 +1,6 @@
 $(document).ready(function(){
   var newAmountOfPizzas = new amountOfPizza();
-  
+
   $("form#mainForm").submit(function(event){
     event.preventDefault();
 
@@ -8,7 +8,9 @@ $(document).ready(function(){
     newPizza.addSize(newPizza);
     newPizza.addToppings(newPizza);
     newPizza.getPrice(newPizza);
+    newAmountOfPizzas.getTotalPrice(newAmountOfPizzas, newPizza);
   });
+
 });
 
 function amountOfPizza(){
@@ -48,4 +50,8 @@ Pizza.prototype.addToppingsPrice = function(newPizza){
     }
   };
   return newPizza;
+}
+
+amountOfPizza.prototype.getTotalPrice = function(newAmountOfPizzas, newPizza){
+  newAmountOfPizzas.amount.push(newPizza);
 }
