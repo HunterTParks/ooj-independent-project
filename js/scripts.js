@@ -1,10 +1,10 @@
 $(document).ready(function(){
   $("form#mainForm").submit(function(event){
     event.preventDefault();
-    // debugger;
 
     var newPizza = new Pizza();
     newPizza.addToppings(newPizza);
+    newPizza.addSize(newPizza);
 
   });
 });
@@ -19,7 +19,10 @@ Pizza.prototype.addToppings = function(newPizza){
   $("input:checkbox[name = toppings]:checked").each(function(){
     newPizza.toppings.push($(this).val());
   });
-  console.log(newPizza.toppings);
+  return newPizza;
+}
 
+Pizza.prototype.addSize = function(newPizza){
+  newPizza.size = $("input:radio[name=flavor]:checked").val();
   return newPizza;
 }
