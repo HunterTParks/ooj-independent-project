@@ -10,6 +10,7 @@ $(document).ready(function(){
     newPizza.getPrice(newPizza);
     newAmountOfPizzas.getTotalPrice(newAmountOfPizzas, newPizza);
     console.log(newAmountOfPizzas.amount + "     " + newAmountOfPizzas.totalPrice);
+    resetFields();
   });
 
 });
@@ -22,6 +23,19 @@ function Pizza(){
   this.toppings = [];
   this.size = 0;
   this.price = 0;
+}
+
+function resetFields(){
+  $("input#pepperoni").prop('checked', false);
+  $("input#sausage").prop('checked', false);
+  $("input#anchovies").prop('checked', false);
+  $("input#bacon").prop('checked', false);
+  $("input#cheese").prop('checked', false);
+  $("input#onions").prop('checked', false);
+  $("input#peppers").prop('checked', false);
+  $("input#olives").prop('checked', false);
+  $("input#mushrooms").prop('checked', false);
+  $("input#jalapenos").prop('checked', false);
 }
 
 Pizza.prototype.addSize = function(newPizza){
