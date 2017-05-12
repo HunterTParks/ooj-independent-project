@@ -3,6 +3,9 @@ $(document).ready(function(){
 
   showMainTitle();
 
+  $("#entryButton").click(function(){
+    showMainSite();
+  });
 
   $("form#mainForm").submit(function(event){
     event.preventDefault();
@@ -25,6 +28,16 @@ function showMainTitle(){
     $("#entryButton").removeClass('hidden');
     $("#entryButton").show().addClass('animated fadeInUp visible');
   }, 1500);
+}
+
+function showMainSite(){
+  $("#mainIntro").addClass('animated fadeOutDown');
+  setTimeout(function(){
+    $("#topOfPage").removeClass('hidden');
+    $("#topOfPage").addClass('animated fadeIn visible');
+    $("#mainForm").removeClass('hidden');
+    $("#mainForm").addClass('animated zoomIn visible');
+  }, 700);
 }
 
 function amountOfPizza(){

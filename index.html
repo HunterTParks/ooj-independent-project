@@ -11,7 +11,7 @@
   </head>
   <body>
     <div class = "container">
-      <jumbotron id = "topOfPage">
+      <jumbotron class = "hidden" id = "topOfPage">
         <div class = "well">
           <h1>Hunter's Pizza!!!</h1>
 
@@ -23,10 +23,16 @@
 
       <jumbotron id = "mainIntro">
         <h1 class = "hidden" id = "mainIntroTitle">HUNTER'S PIZZA</h1>
-        <button class = "hidden" id = "entryButton" type = "btn">Click here to Enter</button>
+        <div class = "hidden" id = "entryButton">
+          <div class = "well" id = "titleWell">
+            <p>
+              Click here to enter site
+            </p>
+          </div>
+        </div>
       </jumbotron>
 
-      <form id = "mainForm">
+      <form id = "mainForm" class = 'hidden'>
         <div class = "row">
           <p>
             What size do you want your pizza to be?

@@ -1,9 +1,9 @@
 #topOfPage {
-  display: none;
+
 }
 
-form {
-  display: none;
+body {
+  border: 1px dotted black;
 }
 
 #mainIntro {
@@ -22,6 +22,7 @@ form {
   font-size: 100px;
 }
 
-#entryButton {
+#titleWell {
+  width: 820px;
 
 }
