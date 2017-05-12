@@ -14,6 +14,7 @@ This project is designated to display a Pizza company. The user will be prompted
 | Constructor creates an object | No object saved | Object created using Pizza Constructor |
 | User input affects created object | Object created using Pizza Constructor | Created object has effected children values |
 | Prototype method determines price | Created object has effected children values | Children values put into prototype and returns a price point for the created Pizza object |
+| Pizza object is put into a constructor for a total amount of pizzas | Pizza object and price is finished | Pizza object is put into array that proceeds in another object to keep track of total amount of pizzas | 
 
 ### Tutorial
 
