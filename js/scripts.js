@@ -7,6 +7,10 @@ $(document).ready(function(){
     showMainSite();
   });
 
+  $("#final").click(function(){
+    showMainSite();
+  });
+
   $("form#mainForm").submit(function(event){
     event.preventDefault();
 
@@ -16,7 +20,10 @@ $(document).ready(function(){
     newPizza.getPrice(newPizza);
     newAmountOfPizzas.getTotalPrice(newAmountOfPizzas, newPizza);
     console.log(newAmountOfPizzas.amount + "     " + newAmountOfPizzas.totalPrice);
+
     resetFields();
+    hideMainSite();
+    $("#reviewOrder").append("<br>" + "Your total is going to be " + newAmountOfPizzas.showOrder(newAmountOfPizzas));
   });
 
 });
@@ -33,10 +40,23 @@ function showMainTitle(){
 function showMainSite(){
   $("#mainIntro").addClass('animated fadeOutDown');
   setTimeout(function(){
+    $("#finalScreen").removeClass('visible');
+    $("#finalScreen").addClass('hidden');
     $("#topOfPage").removeClass('hidden');
     $("#topOfPage").addClass('animated fadeIn visible');
     $("#mainForm").removeClass('hidden');
     $("#mainForm").addClass('animated zoomIn visible');
+  }, 700);
+}
+
+function hideMainSite(){
+  $("#topOfPage").addClass('fadeOut hidden');
+  $("#mainForm").addClass('fadeOut hidden');
+  setTimeout(function(){
+    $("#finalScreenCol1").removeClass('hidden');
+    $("#finalScreenCol1").addClass('animated zoomIn visible');
+    $("#finalScreen").removeClass('hidden');
+    $("#finalScreen").addClass('visible');
   }, 700);
 }
 
@@ -61,6 +81,11 @@ function resetFields(){
   $("input#olives").prop('checked', false);
   $("input#mushrooms").prop('checked', false);
   $("input#jalapenos").prop('checked', false);
+  $("span#reviewOrder").html("");
+}
+
+amountOfPizza.prototype.showOrder = function(newAmountOfPizzas){
+return this.totalPrice;
 }
 
 Pizza.prototype.addSize = function(newPizza){
