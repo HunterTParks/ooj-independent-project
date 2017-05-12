@@ -8,9 +8,14 @@
   padding-left: 100px;
 }
 
+#finalScreen {
+
+}
+
 .container {
   height: 1500px;
-  border: 1px dotted black;
+  border: 0px dotted black;
+  background-color: white;
 }
 
 #mainIntro {
@@ -30,9 +35,8 @@
 
 #introWell {
   width: 820px;
-
 }
 
-body {
-  
+#leftPicture {
+  width: 300px;
 }
