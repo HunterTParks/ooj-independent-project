@@ -33,6 +33,9 @@ body {
   background-color: white;
 }
 
+#totalOfPizza {
+  font-size: 40px;
+}
 #mainIntro {
   width: 1400px;
   height: 100px;
