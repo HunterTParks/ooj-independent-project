@@ -28,7 +28,7 @@ Pizza.prototype.addToppings = function(newPizza){
 }
 
 Pizza.prototype.getPrice = function(newPizza){
-  var size = (parseInt(newPizza.size) / 10);
+  var size = (parseInt(newPizza.size) / 100);
   console.log(size);
-  
+
 }
