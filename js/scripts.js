@@ -4,11 +4,8 @@ $(document).ready(function(){
     debugger;
 
     var newPizza = new Pizza();
+    newPizza = addToppings(newPizza);
 
-    $("input:checkbox[name = toppings]:checked").each(function(){
-      newPizza.toppings.push($(this).val());
-    });
-    console.log(newPizza.toppings);
   });
 });
 
@@ -16,4 +13,13 @@ function Pizza(){
   this.toppings = [];
   this.size = "";
   this.price = "";
+}
+
+var addToppings = function(newPizza){
+  $("input:checkbox[name = toppings]:checked").each(function(){
+    newPizza.toppings.push($(this).val());
+  });
+  console.log(newPizza.toppings);
+
+  return newPizza;
 }
