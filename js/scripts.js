@@ -9,6 +9,7 @@ $(document).ready(function(){
     newPizza.addToppings(newPizza);
     newPizza.getPrice(newPizza);
     newAmountOfPizzas.getTotalPrice(newAmountOfPizzas, newPizza);
+    console.log(newAmountOfPizzas.amount + "     " + newAmountOfPizzas.totalPrice);
   });
 
 });
@@ -54,4 +55,7 @@ Pizza.prototype.addToppingsPrice = function(newPizza){
 
 amountOfPizza.prototype.getTotalPrice = function(newAmountOfPizzas, newPizza){
   newAmountOfPizzas.amount.push(newPizza);
+  console.log(newAmountOfPizzas.amount);
+  newAmountOfPizzas.totalPrice += newPizza.price;
+  return newAmountOfPizzas;
 }
