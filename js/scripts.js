@@ -28,7 +28,18 @@ Pizza.prototype.addToppings = function(newPizza){
 }
 
 Pizza.prototype.getPrice = function(newPizza){
-  var size = (parseInt(newPizza.size) / 100);
-  console.log(size);
+  newPizza.price = (parseInt(newPizza.size) / 100);
+  newPizza.addToppingsPrice(newPizza);
 
+  return newPizza;
+}
+
+Pizza.prototype.addToppingsPrice = function(newPizza){
+  for(var i = 0; i < newPizza.toppings.length; i++){
+    newPizza.toppings[i] = parseInt(newPizza.toppings[i]);
+    if(newPizza.toppings[i] % 2 === 0){
+      newPizza.price += 1;
+    }
+  };
+  return newPizza;
 }
