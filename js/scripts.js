@@ -1,5 +1,7 @@
 $(document).ready(function(){
-
+  $("form#mainForm").submit(function(event){
+    event.preventDefault();
+  });
 });
 
 function Pizza(){
