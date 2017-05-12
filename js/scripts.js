@@ -75,6 +75,15 @@ $(document).ready(function(){
     $("#PizzaTotal").append(newAmountOfPizzas.totalPrice);
   });
 
+  $("#address").click(function(){
+    $("#finalScreen").removeClass('visible');
+    $("#finalScreen").addClass('fadeOutDown hidden');
+    setTimeout(function(){
+      $("#orderAddress").removeClass('hidden');
+      $("#orderAddress").addClass('animated bounceInUp')
+    }, 700);
+  })
+
   $("form#mainForm").submit(function(event){
     event.preventDefault();
     debugger;
@@ -143,9 +152,9 @@ function hideMainSite(){
     $("#topOfPage").removeClass('fadeOut');
     $("#mainForm").removeClass('fadeOut');
     $("#finalScreenCol1").removeClass('hidden');
-    $("#finalScreenCol1").addClass('animated zoomIn visible');
+    $("#finalScreenCol1").addClass('visible animated bounceInUp');
     $("#finalScreen").removeClass('hidden');
-    $("#finalScreen").addClass('visible');
+    $("#finalScreen").addClass('visible animated bounceInUp');
   }, 700);
 }
 
