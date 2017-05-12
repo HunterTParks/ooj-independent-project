@@ -1,17 +1,32 @@
+// Ready function loads when the page is loaded or refreshed
 $(document).ready(function(){
+  // amountofPizza constructor used for storing each individual pizza
   var newAmountOfPizzas = new amountOfPizza();
-  var str = 0;
 
+  // Function that displays the main title of the program
+  // Will display the restaurant's name, a choice of 3 premade
+  // pizzas, and an option to create your own pizza.
   showMainTitle();
 
+  // Click function used when you click on 'Click here to make a custom pizza'
   $("#entryButton").click(function(){
+
+    // Function that displays the MAIN site where you can
+    // create a custom pizza
     showMainSite();
   });
 
+  // Click function used when you click on 'Make another pizza?'
   $("#final").click(function(){
+
+    //A different function that displays the main title
+    // PLEASENOTE!!!!! from this point in the app, I couldn't
+    // take the variables into the 'showMainTitle' without
+    // bugs so I had to create a new function
     showTitleAgain();
   });
 
+  // Click function that automatically makes a cheese pizza
   $("#cheesePizza").click(function(){
     var newPizza = new Pizza();
     newPizza.size = "950";
@@ -33,6 +48,7 @@ $(document).ready(function(){
     $("#PizzaTotal").append(newAmountOfPizzas.totalPrice);
   });
 
+  // Click function that automatically makes a pepperoni pizza
   $("#pepperoniPizza").click(function(){
     var newPizza = new Pizza();
     newPizza.size = "950";
@@ -54,6 +70,7 @@ $(document).ready(function(){
     $("#PizzaTotal").append(newAmountOfPizzas.totalPrice);
   });
 
+  // Click function that automatically makes a meat lovers pizza
   $("#meatPizza").click(function(){
     var newPizza = new Pizza();
     newPizza.size = "950";
@@ -75,6 +92,8 @@ $(document).ready(function(){
     $("#PizzaTotal").append(newAmountOfPizzas.totalPrice);
   });
 
+  // Click function that hides everything on screen
+  // and displays address and contact information
   $("#address").click(function(){
     $("#finalScreen").removeClass('visible');
     $("#finalScreen").addClass('fadeOutDown hidden');
@@ -84,19 +103,33 @@ $(document).ready(function(){
     }, 700);
   })
 
+  //submit form used in taking user input for custom made pizzas
   $("form#mainForm").submit(function(event){
     event.preventDefault();
-    debugger;
-    var newPizza = new Pizza();
-    newPizza.addSize(newPizza);
-    newPizza.addToppings(newPizza);
-    newPizza.getPrice(newPizza);
-    newAmountOfPizzas.getTotalPrice(newAmountOfPizzas, newPizza);
-    console.log(newAmountOfPizzas.amount + "     " + newAmountOfPizzas.totalPrice);
 
+    // Constructs a new pizza everytime a form is submitted
+    var newPizza = new Pizza();
+
+    //Method used to count toppings
+    newPizza.addToppings(newPizza);
+
+    //Method used to count toppings and raise the price based
+    //on certain toppings
+    newPizza.getPrice(newPizza);
+
+    //Method used in storing each pizza into another constructor and
+    //adding up the total price of every pizza together
+    newAmountOfPizzas.getTotalPrice(newAmountOfPizzas, newPizza);
+
+    // function that resets every input value
     resetFields();
+
+    // function that hides the custom pizza screen
+    // and displays a menu asking if you would like to make
+    // another pizza
     hideMainSite();
 
+    // Displays the total price of the pizzas to the screen
     $("#PizzaTotal").append(newAmountOfPizzas.totalPrice);
   });
 
@@ -118,8 +151,6 @@ function showMainTitle(){
 function showTitleAgain(){
   $("#finalScreen").addClass('animated fadeOutDown hidden');
   $("#finalScreen").removeClass('visible fadeOutDown')
-  // $("#finalScreenCol1").removeClass('visible');
-  // $("#finalScreenCol1").addClass('animated fadeOutDown');
   setTimeout(function(){
     $("#premade").removeClass('animated fadeOutDown');
     $("#mainIntro").removeClass('animated fadeOutDown');
