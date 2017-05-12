@@ -5,7 +5,7 @@ $(document).ready(function(){
     var newPizza = new Pizza();
     newPizza.addToppings(newPizza);
     newPizza.addSize(newPizza);
-
+    newPizza.getPrice(newPizza);
   });
 });
 
@@ -25,4 +25,8 @@ Pizza.prototype.addToppings = function(newPizza){
 Pizza.prototype.addSize = function(newPizza){
   newPizza.size = $("input:radio[name=flavor]:checked").val();
   return newPizza;
+}
+
+Pizza.prototype.getPrice = function(newPizza){
+  
 }
