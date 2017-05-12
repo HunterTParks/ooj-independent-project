@@ -12,6 +12,69 @@ $(document).ready(function(){
     showTitleAgain();
   });
 
+  $("#cheesePizza").click(function(){
+    var newPizza = new Pizza();
+    newPizza.size = "950";
+    newPizza.toppings.push("8");
+    newPizza.price = 9.5;
+    newAmountOfPizzas.amount.push(newPizza);
+    newAmountOfPizzas.getTotalPrice(newAmountOfPizzas, newPizza);
+    $("#mainIntro").addClass('animated fadeOutDown');
+    $("#premade").removeClass('animated fadeInUp');
+    $("#premade").addClass('animated fadeOutDown');
+    setTimeout(function(){
+      $("#mainIntro").removeClass('animated fadeOutDown');
+      $("#premade").removeClass('animated fadeOutDown')
+      $("#mainIntro").addClass('hidden');
+      $("#premade").addClass('hidden');
+    }, 700);
+    hideMainSite();
+    resetFields();
+    $("#PizzaTotal").append(newAmountOfPizzas.totalPrice);
+  });
+
+  $("#pepperoniPizza").click(function(){
+    var newPizza = new Pizza();
+    newPizza.size = "950";
+    newPizza.toppings.push("8", "2");
+    newPizza.price = 10.5;
+    newAmountOfPizzas.amount.push(newPizza);
+    newAmountOfPizzas.getTotalPrice(newAmountOfPizzas, newPizza);
+    $("#mainIntro").addClass('animated fadeOutDown');
+    $("#premade").removeClass('animated fadeInUp');
+    $("#premade").addClass('animated fadeOutDown');
+    setTimeout(function(){
+      $("#mainIntro").removeClass('animated fadeOutDown');
+      $("#premade").removeClass('animated fadeOutDown')
+      $("#mainIntro").addClass('hidden');
+      $("#premade").addClass('hidden');
+    }, 700);
+    hideMainSite();
+    resetFields();
+    $("#PizzaTotal").append(newAmountOfPizzas.totalPrice);
+  });
+
+  $("#meatPizza").click(function(){
+    var newPizza = new Pizza();
+    newPizza.size = "950";
+    newPizza.toppings.push("8", "2", "4", "6", "10");
+    newPizza.price = 12.5;
+    newAmountOfPizzas.amount.push(newPizza);
+    newAmountOfPizzas.getTotalPrice(newAmountOfPizzas, newPizza);
+    $("#mainIntro").addClass('animated fadeOutDown');
+    $("#premade").removeClass('animated fadeInUp');
+    $("#premade").addClass('animated fadeOutDown');
+    setTimeout(function(){
+      $("#mainIntro").removeClass('animated fadeOutDown');
+      $("#premade").removeClass('animated fadeOutDown')
+      $("#mainIntro").addClass('hidden');
+      $("#premade").addClass('hidden');
+    }, 700);
+    hideMainSite();
+    resetFields();
+    $("#PizzaTotal").append(newAmountOfPizzas.totalPrice);
+  });
+
   $("form#mainForm").submit(function(event){
     event.preventDefault();
     debugger;
@@ -31,7 +94,9 @@ $(document).ready(function(){
 });
 
 function showMainTitle(){
-  $("#mainIntroTitle").removeClass('hidden');
+  $("#mainIntroTitle").removeClass('fadeOutUp hidden');
+  $("#mainIntro").removeClass('fadeOutDown hidden');
+  $("#mainIntro").addClass('animated fadeInUp');
   $("#mainIntroTitle").addClass('animated fadeInUp visible');
   setTimeout(function(){
     $("#premade").removeClass('hidden');
@@ -42,10 +107,10 @@ function showMainTitle(){
 }
 
 function showTitleAgain(){
-  $("#finalScreen").removeClass('visible')
-  $("#finalScreen").addClass('animated fadeOutDown');
-  $("#finalScreenCol1").removeClass('visible');
-  $("#finalScreenCol1").addClass('animated fadeOutDown');
+  $("#finalScreen").addClass('animated fadeOutDown hidden');
+  $("#finalScreen").removeClass('visible fadeOutDown')
+  // $("#finalScreenCol1").removeClass('visible');
+  // $("#finalScreenCol1").addClass('animated fadeOutDown');
   setTimeout(function(){
     $("#premade").removeClass('animated fadeOutDown');
     $("#mainIntro").removeClass('animated fadeOutDown');
@@ -56,10 +121,11 @@ function showTitleAgain(){
 }
 
 function showMainSite(){
-  $("#mainIntro").addClass('animated fadeOutDown');
+  $("#mainIntro").addClass('animated fadeOutDown hidden');
   $("#premade").removeClass('animated fadeInUp');
   $("#premade").addClass('animated fadeOutDown');
   setTimeout(function(){
+    $("#mainIntro").removeClass('animated fadeOutDown');
     $("#premade").addClass('hidden');
     $("#finalScreen").removeClass('visible');
     $("#finalScreen").addClass('hidden');
@@ -74,6 +140,8 @@ function hideMainSite(){
   $("#topOfPage").addClass('fadeOut hidden');
   $("#mainForm").addClass('fadeOut hidden');
   setTimeout(function(){
+    $("#topOfPage").removeClass('fadeOut');
+    $("#mainForm").removeClass('fadeOut');
     $("#finalScreenCol1").removeClass('hidden');
     $("#finalScreenCol1").addClass('animated zoomIn visible');
     $("#finalScreen").removeClass('hidden');
