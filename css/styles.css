@@ -1,8 +1,15 @@
-#topOfPage {
-
+.row{
+  margin-left: 20px;
 }
 
-body {
+#titleWell {
+  box-sizing: border-box;
+  /*width: 1000px;*/
+  padding-left: 100px;
+}
+
+.container {
+  height: 1500px;
   border: 1px dotted black;
 }
 
@@ -11,18 +18,21 @@ body {
   height: 100px;
   position: absolute;
   top: 40%;
-  left: 30%;
+  left: 34%;
   margin-left: -(100/2)px;
   margin-top: -(100/2)px;
 
 }
 
-
 #mainIntroTitle {
   font-size: 100px;
 }
 
-#titleWell {
+#introWell {
   width: 820px;
 
+}
+
+body {
+  
 }
