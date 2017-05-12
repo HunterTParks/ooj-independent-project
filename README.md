@@ -43,3 +43,9 @@ There are no known bugs at this given time.
 ### Support
 
 If you would like to report any bugs, Please email me at hunter.thomas.parks@gmail.com. Please include your name and phone number in the email.
+
+### Licensing
+
+This software is protected and licensed by the GPL license
+
+#### This Software was created by **HUNTER PARKS**
