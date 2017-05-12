@@ -20,3 +20,7 @@ form {
 #mainIntroTitle {
   font-size: 100px;
 }
+
+#entryButton {
+  display: none;
+}

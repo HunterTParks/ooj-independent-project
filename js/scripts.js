@@ -1,6 +1,9 @@
 $(document).ready(function(){
   var newAmountOfPizzas = new amountOfPizza();
 
+  showMainTitle();
+
+
   $("form#mainForm").submit(function(event){
     event.preventDefault();
 
@@ -14,6 +17,11 @@ $(document).ready(function(){
   });
 
 });
+
+function showMainTitle(){
+  $("#mainIntroTitle").removeClass('hidden');
+  $("#mainIntroTitle").addClass('animated fadeInUp visible');
+}
 
 function amountOfPizza(){
   this.amount = [];
