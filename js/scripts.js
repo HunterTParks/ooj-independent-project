@@ -43,8 +43,8 @@ $(document).ready(function(){
       $("#mainIntro").addClass('hidden');
       $("#premade").addClass('hidden');
     }, 700);
+    $("#PizzaTotal").empty();
     hideMainSite();
-    resetFields();
     $("#PizzaTotal").append(newAmountOfPizzas.totalPrice);
   });
 
@@ -65,8 +65,8 @@ $(document).ready(function(){
       $("#mainIntro").addClass('hidden');
       $("#premade").addClass('hidden');
     }, 700);
+    $("#PizzaTotal").empty();
     hideMainSite();
-    resetFields();
     $("#PizzaTotal").append(newAmountOfPizzas.totalPrice);
   });
 
@@ -87,8 +87,8 @@ $(document).ready(function(){
       $("#mainIntro").addClass('hidden');
       $("#premade").addClass('hidden');
     }, 700);
+    $("#PizzaTotal").empty();
     hideMainSite();
-    resetFields();
     $("#PizzaTotal").append(newAmountOfPizzas.totalPrice);
   });
 
@@ -110,19 +110,36 @@ $(document).ready(function(){
     // Constructs a new pizza everytime a form is submitted
     var newPizza = new Pizza();
 
+    var pizzaSize = $("input:radio[name=size]:checked").val();
+    newPizza.addSize(newPizza, pizzaSize);
+
     //Method used to count toppings
-    newPizza.addToppings(newPizza);
+
+    newPizza.addToppings(newPizza, pizzaSize);
 
     //Method used to count toppings and raise the price based
     //on certain toppings
-    newPizza.getPrice(newPizza);
+    var toppings = $("input:checkbox[name = toppings]:checked").val();
+    newPizza.getPrice(newPizza, toppings);
 
     //Method used in storing each pizza into another constructor and
     //adding up the total price of every pizza together
     newAmountOfPizzas.getTotalPrice(newAmountOfPizzas, newPizza);
 
     // function that resets every input value
-    resetFields();
+    // var resetFields = function(){
+    $("input#pepperoni").prop('checked', false);
+    $("input#sausage").prop('checked', false);
+    $("input#anchovies").prop('checked', false);
+    $("input#bacon").prop('checked', false);
+    $("input#cheese").prop('checked', false);
+    $("input#onions").prop('checked', false);
+    $("input#peppers").prop('checked', false);
+    $("input#olives").prop('checked', false);
+    $("input#mushrooms").prop('checked', false);
+    $("input#jalapenos").prop('checked', false);
+    $("#PizzaTotal").empty();
+    // };
 
     // function that hides the custom pizza screen
     // and displays a menu asking if you would like to make
@@ -199,31 +216,17 @@ function Pizza(){
   this.price = 0;
 }
 
-function resetFields(){
-  $("input#pepperoni").prop('checked', false);
-  $("input#sausage").prop('checked', false);
-  $("input#anchovies").prop('checked', false);
-  $("input#bacon").prop('checked', false);
-  $("input#cheese").prop('checked', false);
-  $("input#onions").prop('checked', false);
-  $("input#peppers").prop('checked', false);
-  $("input#olives").prop('checked', false);
-  $("input#mushrooms").prop('checked', false);
-  $("input#jalapenos").prop('checked', false);
-  $("#PizzaTotal").empty();
-}
-
 amountOfPizza.prototype.showOrder = function(newAmountOfPizzas){
 return this.totalPrice;
 }
 
-Pizza.prototype.addSize = function(newPizza){
-  newPizza.size = $("input:radio[name=size]:checked").val();
+Pizza.prototype.addSize = function(newPizza, pizzaSize){
+  newPizza.size = pizzaSize;
   return newPizza;
 }
 
-Pizza.prototype.addToppings = function(newPizza){
-  $("input:checkbox[name = toppings]:checked").each(function(){
+Pizza.prototype.addToppings = function(newPizza, toppings){
+  $(toppings).each(function(){
     newPizza.toppings.push($(this).val());
   });
   return newPizza;
