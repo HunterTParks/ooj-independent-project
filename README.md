@@ -8,13 +8,13 @@ This project is designated to display a Pizza company. The user will be prompted
 
 ### Specs
 
-| Behavior | Before Output | After Output |
-| -------- | ------------  | -------------|
-| Displays form inputs |       | 'What would you like on your pizza?'|
-| App creates an object | No object saved | Pizza Object Created |
-| User input affects created object | Pizza object created | Pizza object gets size and toppings |
-| App determines Price | Pizza object gets size and toppings | App determines price based on size and toppings |
-| App determines a total amount of pizzas user has ordered | Pizza object and price is finished | Pizza object has the price determined for the total amount of pizzas |
+| Behavior | Output |
+| ---------| ------ | ------ |
+| User selects size of pizza | 12 inch pizza |
+| User selects toppings | Pepperoni, sausage |
+| Calculate price | Extra meats are $2.00 dollars |
+| Displays total price | Total price is $11.50 |
+| Option to create another pizza | "Click Here to order another pizza"|
 
 ### Tutorial
 
@@ -23,7 +23,7 @@ Here is how you can download my web application from github:
 * Copy the clone link
 * In terminal (Or command line for Windows or certain Linux systems), **git clone** the repository
 * Once you have successfully downloaded the project, open the folder
-* Open the file labled **index.html**
+* Open the file labeled **index.html**
 
 Another way you can view my application is by going to the following link:
 
